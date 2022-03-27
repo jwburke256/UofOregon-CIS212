@@ -1,0 +1,6 @@
+Name: Jacob Burke
+DuckID: jburke2
+Assistance: Freedom Buchanan - General troubleshooting and assistance
+with understanding pointers and certain functions
+State of Submission: All files submitted work properly and past all
+test cases.

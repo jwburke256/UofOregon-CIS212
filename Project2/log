@@ -1,0 +1,94 @@
+Starting analysis for student burkejacob
+Building wcnt
+cc -g -W -Wall   -c -o wcnt.o wcnt.c
+gcc -o wcnt wcnt.o stsplit.o
+Testing wcnt on unseen file
+==========
+==========
+Check for memory leaks (not calling stfree correctly)
+==20628== Memcheck, a memory error detector
+==20628== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20628== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==20628== Command: ./wcnt
+==20628== 
+==20628== 
+==20628== HEAP SUMMARY:
+==20628==     in use at exit: 6,863 bytes in 182 blocks
+==20628==   total heap usage: 184 allocs, 2 frees, 15,055 bytes allocated
+==20628== 
+==20628== LEAK SUMMARY:
+==20628==    definitely lost: 4,136 bytes in 91 blocks
+==20628==    indirectly lost: 2,724 bytes in 90 blocks
+==20628==      possibly lost: 3 bytes in 1 blocks
+==20628==    still reachable: 0 bytes in 0 blocks
+==20628==         suppressed: 0 bytes in 0 blocks
+==20628== Rerun with --leak-check=full to see details of leaked memory
+==20628== 
+==20628== For counts of detected and suppressed errors, rerun with: -v
+==20628== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Building ccnt
+cc -g -W -Wall   -c -o ccnt.o ccnt.c
+gcc -o ccnt ccnt.o
+Testing ccnt on unseen file
+==========
+==========
+Building wcfilter
+cc -g -W -Wall   -c -o wcfilter.o wcfilter.c
+gcc -o wcfilter wcfilter.o stsplit.o
+Testing wcfilter on unseen file
+==========
+==========
+Check for memory leaks (not calling stfree correctly)
+==20649== Memcheck, a memory error detector
+==20649== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20649== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==20649== Command: ./wcfilter
+==20649== 
+==20649== 
+==20649== HEAP SUMMARY:
+==20649==     in use at exit: 6,863 bytes in 182 blocks
+==20649==   total heap usage: 184 allocs, 2 frees, 15,055 bytes allocated
+==20649== 
+==20649== LEAK SUMMARY:
+==20649==    definitely lost: 4,136 bytes in 91 blocks
+==20649==    indirectly lost: 2,724 bytes in 90 blocks
+==20649==      possibly lost: 3 bytes in 1 blocks
+==20649==    still reachable: 0 bytes in 0 blocks
+==20649==         suppressed: 0 bytes in 0 blocks
+==20649== Rerun with --leak-check=full to see details of leaked memory
+==20649== 
+==20649== For counts of detected and suppressed errors, rerun with: -v
+==20649== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Building wcargs
+cc -g -W -Wall   -c -o wcargs.o wcargs.c
+gcc -o wcargs wcargs.o
+Testing wcargs with a number of different legal command lines
+Testing wcargs with no options and no files
+==========
+==========
+Testing wcargs with no options and 1 file
+==========
+==========
+Testing wcargs with no options and 2 files
+==========
+==========
+Testing wcargs with no options and 3 files, one being -
+==========
+==========
+testing wcargs with two options in separate arguments and no files
+==========
+==========
+testing wcargs with two options in one argument and no files
+==========
+==========
+testing wcargs with one option and 1 file
+==========
+==========
+testing wcargs with one option and 2 files
+==========
+==========
+testing wcargs with one option and 3 files, one being -
+==========
+==========
+Building wc
+        !wc.c not submitted!

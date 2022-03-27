@@ -1,0 +1,6 @@
+Name: Jacob Burke
+Duck ID; jburke2
+Contributors: Freedom Buchanan - Assisted with understanding how to properly use string strip and translate
+Krishna Patel - Pointed out it and al destroy functions were in incorrect places which caused seg faults
+State of Submission:
+All tscript tests passed, no memory leaks with all heap memory freed.

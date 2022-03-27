@@ -1,0 +1,39 @@
+student name: burkejacob
+total marks: 50
+penalty(%): 0
+final mark: 50
+
+ 5 report is consistent with behavior of the submission
+====================
+ 1 wcnt.c compiles
+ 1 wcnt.o links to produce wcnt
+ 2 wcnt works correctly
+ 4 wcnt could have worked
+====================
+ 1 ccnt.c compiles
+ 1 ccnt.o links to produce ccnt
+ 2 ccnt works correctly
+ 4 ccnt could have worked
+====================
+ 2 wcfilter.c compiles
+ 1 wcfilter.o links to produce wcfilter
+ 3 wcfilter works correctly
+ 5 wcfilter could have worked
+====================
+ 3 wcargs.c compiles
+ 1 wcargs.o links to produce wcargs
+ 6 wcargs works correctly with a variety of command line invocations
+ 8 wcargs could have worked
+====================
+   EXTRA CREDIT
+ 0 wc.c compiles
+ 0 wc.o links to produce wc
+ 0 wc works correctly with a variety of command line invocations
+ 0 wc could have worked
+ 0 corrections described below
+
+comments
+* wcnt.c - significant memory leaks, you have to call stfree() inside of the
+  while loop to free up the words you just counted
+* wcfilter.c - significant memory leaks in countLWC(), you have to call stfree()
+   inside of the while loop to free up the words you just counted

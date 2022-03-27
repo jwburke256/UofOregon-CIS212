@@ -1,0 +1,3 @@
+suniq.c
+Makefile
+report.txt

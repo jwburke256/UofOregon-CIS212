@@ -1,0 +1,4 @@
+Name: Jacob Burke
+DuckID: jburke2
+Classmate Assistance: None
+State of Submission: tscript runs properly within my VM and did not return any differences.

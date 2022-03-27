@@ -1,0 +1,69 @@
+#!/bin/bash
+#
+# usage: ./tscript [test ...]
+#
+tests="wcnt ccnt wcfilter wcargs wc"
+if [[ "$#" != "0" ]]; then
+    tests="$*"
+fi
+for t in $tests; do
+    case "$t" in
+     wcnt) echo "Testing that wcnt works correctly"
+        echo "====="
+        ./wcnt <input1 | diff - wcnt.out
+        echo "===== Stopping wcnt test"
+        ;;
+     ccnt) echo "Testing that ccnt works correctly"
+        echo "====="
+	./ccnt <input1 | diff - ccnt.out
+        echo "===== Stopping ccnt test"
+        ;;
+     wcfilter) echo "Testing that wcfilter works correctly"
+        echo "====="
+	./wcfilter <input1 | diff - wcfilter.out
+        echo "===== Stopping filter test"
+        ;;
+     wcargs) echo "Testing that wcargs works correctly"
+	echo "===== Testing that './wcargs' works correctly"
+	./wcargs | diff - wcargs-1.out
+        echo "===== Stopping './wcargs' test"
+	echo "===== Testing that './wcargs -lwc' works correctly"
+	./wcargs -lwc | diff - wcargs-2.out
+        echo "===== Stopping './wcargs -lwc' test"
+	echo "===== Testing that './wcargs-l foo' works correctly"
+	./wcargs -l foo | diff - wcargs-3.out
+        echo "===== Stopping './wcargs -l foo' test"
+	echo "===== Testing that './wcargs -wc foo bar' works correctly"
+	./wcargs -wc foo bar | diff - wcargs-4.out
+        echo "===== Stopping './wcargs -wc foo bar' test"
+	echo "===== Testing that './wcargs foo - bar' works correctly"
+	./wcargs foo - bar | diff - wcargs-5.out
+        echo "===== Stopping './wcargs foo - bar' test"
+	echo "===== Testing that './wcargs -w foo - bar' works correctly"
+	./wcargs -w foo - bar | diff - wcargs-6.out
+        echo "===== Stopping './wcargs -w foo - bar' test"
+        ;;
+     wc) echo "Testing that wc works correctly"
+	echo "===== Testing that './wc <file' works correctly"
+	./wc <input1 | diff - wc-1.out
+        echo "===== Stopping './wc <file' test"
+	echo "===== Testing that './wc -lwc <file' works correctly"
+	./wc -lwc <input2 | diff - wc-2.out
+        echo "===== Stopping './wc -lwc <file' test"
+	echo "===== Testing that './wc -l file' works correctly"
+	./wc -l input3 | diff - wc-3.out
+        echo "===== Stopping './wc-l file' test"
+	echo "===== Testing that './wc -wc file1 file2' works correctly"
+	./wc -wc input3 input1 | diff - wc-4.out
+        echo "===== Stopping './wc -wc file1 file2' test"
+	echo "===== Testing that './wc file1 - file2' works correctly"
+	echo this | ./wc input3 - input1 | diff - wc-5.out
+        echo "===== Stopping './wc file1 - file2' test"
+	echo "===== Testing that './wc -w file1 - file2' works correctly"
+	echo this and that | ./wc -w input3 - input1 | diff - wc-6.out
+        echo "===== Stopping './wc -w file1 - file2' test"
+        ;;
+     *) echo $t - illegal test
+        ;;
+    esac
+done
