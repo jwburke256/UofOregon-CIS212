@@ -1,0 +1,3 @@
+Makefile
+input.txt
+lab7.c

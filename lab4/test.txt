@@ -1,0 +1,4 @@
+this is a test file.
+It hase some text in it.
+Y program no work! :C
+Maybe we need to do some debugging using GDB and Valgrind!
